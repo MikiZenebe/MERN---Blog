@@ -29,7 +29,7 @@ const BlogSchema = new Schema(
       required: true,
     },
 
-    catagories: {
+    category: {
       type: String,
       required: true,
     },

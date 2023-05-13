@@ -19,3 +19,6 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 //Auth Routes
 const auth = require("./controllers/authController");
 app.use("/auth", auth);
+
+const blog = require("./controllers/blogController");
+app.use("/blog", blog);
