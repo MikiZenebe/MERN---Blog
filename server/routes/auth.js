@@ -26,8 +26,6 @@ router.post("/register", async (req, res) => {
 
 //Login
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-
   try {
     //Check the username and password
     const user = await User.findOne({ email: req.body.email });

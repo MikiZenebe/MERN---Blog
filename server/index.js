@@ -14,3 +14,16 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log(`Database connected on port ${4000}`);
   });
 });
+
+//Routes
+const authRouter = require("./routes/auth");
+app.use("/auth", authRouter);
+
+const userRouter = require("./routes/users");
+app.use("/user", userRouter);
+
+const postRouter = require("./routes/post");
+app.use("/post", postRouter);
+
+const catRouter = require("./routes/categories");
+app.use("/categories", catRouter);
