@@ -14,11 +14,3 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log(`Database connected on port ${4000}`);
   });
 });
-
-///Routes///
-//Auth Routes
-const auth = require("./controllers/authController");
-app.use("/auth", auth);
-
-const blog = require("./controllers/blogController");
-app.use("/blog", blog);
