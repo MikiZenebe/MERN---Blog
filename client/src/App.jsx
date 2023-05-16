@@ -18,11 +18,11 @@ export default function App() {
         </header>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/create" element={<CreateBlog />} />
-          <Route path="/detail/:id" element={<DetailPage />} />
+          <Route exact path="/post/:id" element={<DetailPage />} />
           <Route path="/update/:id" element={<UpdateBlog />} />
         </Routes>
       </main>

@@ -1,78 +1,51 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import banner from "../assets/banner.jpg";
+import Categories from "./Categories";
 
-export default function Post() {
+export default function Post({ posts }) {
   return (
     <div className="py-14 container mx-auto px-6 lg:px-20">
-      <div className="flex flex-col text-[14px] sm:text-[20px]">
-        <h1 className="text-2xl font-bold text-center ">
-          Most interesting topic
-        </h1>
-        <div className="flex gap-4 sm:gap-14 my-6 w-full justify-center text-[12px]">
-          <p className="border-gray-400 border-[1px] px-3 py-1 rounded-xl font-medium items-center hover:bg-black hover:transition hover:duration-300 hover:text-white cursor-pointer">
-            Sport
-          </p>
-
-          <p className="border-gray-400 border-[1px] px-3 py-1 rounded-xl font-medium items-center hover:bg-black hover:transition hover:duration-300 hover:text-white cursor-pointer">
-            Sport
-          </p>
-          <p className="border-gray-400 border-[1px] px-3 py-1 rounded-xl font-medium items-center hover:bg-black hover:transition hover:duration-300 hover:text-white cursor-pointer">
-            Sport
-          </p>
-          <p className="border-gray-400 border-[1px] px-3 py-1 rounded-xl font-medium items-center hover:bg-black hover:transition hover:duration-300 hover:text-white cursor-pointer">
-            Sport
-          </p>
-          <p className="border-gray-400 border-[1px] px-3 py-1 rounded-xl font-medium items-center hover:bg-black hover:transition hover:duration-300 hover:text-white cursor-pointer">
-            Sport
-          </p>
-        </div>
-      </div>
-
+      <Categories />
       <div className="py-4">
-        <div>
-          <h1 className="text-2xl font-bold text-center my-6">
-            Most interesting posts
-          </h1>
-        </div>
         <div className=" flex flex-col items-center sm:flex-row md:flex-row gap-10 justify-center flex-wrap ">
-          <div className="card max-w-[250px] mt-2 transform transition duration-300  gap-4 bg-white p-4">
-            <div>
-              <img className="" src={banner} alt="" />
-              <div className="my-4">
-                <h1 className="font-bold">New Js Coming</h1>
+          {posts.map((item, key) => (
+            <div
+              key={key}
+              className="card max-w-[250px] mt-2 transform transition duration-300  gap-1 bg-white p-4"
+            >
+              <div>
+                <Link to={`/post/${item._id}`}>
+                  <img className="" src={banner} alt="" />
+                  <div className="flex flex-col my-1">
+                    <h1 className="font-bold">{item.title}</h1>
+                  </div>
+                </Link>
+                <p className="text-[13px]">{item.desc}</p>
+              </div>
 
-                <p>description</p>
+              <div className="mt-3 flex items-center gap-3">
+                <img
+                  className="w-8 h-8 object-cover rounded-full"
+                  src={banner}
+                />
+
+                <p className="text-[13px] font-semibold text-gray-500">
+                  {item.username}
+                </p>
+
+                <p className="text-[11px] text-gray-600 ml-8">
+                  {new Date(item.createdAt).toDateString()}
+                </p>
+              </div>
+
+              <div className="mt-4">
+                <p className="border-gray-400 border-[1px] text-[11px]  rounded-full font-medium items-center text-center max-w-[60px]">
+                  {item.category}
+                </p>
               </div>
             </div>
-
-            <div className="mt-3 flex items-center gap-4">
-              <img
-                className="w-10 h-10 object-cover rounded-full"
-                src={banner}
-              />
-              <p>Miki</p>
-              <p className="text-[11px] text-gray-600 ml-8">Date</p>
-            </div>
-          </div>
-
-          <div className="card max-w-[250px] mt-2 transform transition duration-300  gap-4 bg-white p-4">
-            <div>
-              <img className="" src={banner} alt="" />
-              <div className="my-4">
-                <h1 className="font-bold">New Js Coming</h1>
-
-                <p>description</p>
-              </div>
-            </div>
-
-            <div className="mt-3 flex items-center gap-4">
-              <img
-                className="w-10 h-10 object-cover rounded-full"
-                src={banner}
-              />
-              <p>Miki</p>
-              <p className="text-[11px] text-gray-600 ml-8">Date</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

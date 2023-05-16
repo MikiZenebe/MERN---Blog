@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useLocation } from "react-router-dom";
 import Img from "../assets/banner.jpg";
 
 export default function DetailPage() {
+  const [post, setPost] = useState({});
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
+
+  useEffect(() => {
+    const getSingle = async () => {
+      const res = await axios.get("http://localhost:4000/posts/" + path);
+      setPost(res.data);
+    };
+    getSingle();
+  }, [path]);
+
   return (
     <div>
-      <div className="container py-14 mx-auto px-6 ">
+      <div key={post._id} className="container py-14 mx-auto px-6 ">
         <div className="flex flex-col justify-center items-center text-center gap-2">
-          <h3 className="font-semibold">Catagory</h3>
-          <h1 className="text-4xl font-medium">Here is the Title</h1>
-          <p>Here is the TitleHere is the TitleHere is the Title</p>
+          <h3 className="font-semibold">{post.category}</h3>
+          <h1 className="text-4xl font-medium">{post.title}</h1>
+          <p>{post.desc}</p>
         </div>
 
         <div className="my-8 flex gap-4 justify-center">
@@ -19,9 +33,11 @@ export default function DetailPage() {
           </div>
 
           <div>
-            <p className="font-semibold ">username</p>
+            <Link to={`/?user=${post.username}`}>
+              <p className="font-semibold ">{post.username}</p>
+            </Link>
 
-            <p>date</p>
+            <p>{new Date(post.createdAt).toDateString()}</p>
           </div>
         </div>
 
@@ -33,9 +49,7 @@ export default function DetailPage() {
             <p>Delete</p>
           </div>
           <p className=" my-6 max-w-[600px] sm:max-w-[800px] xl:max-w-[1000px] ">
-            import Img from "../assets/banner.jpg"; import Img from
-            "../assets/banner.jpg"; import Img from "../assets/banner.jpg";
-            import Img from "../assets/banner.jpg";
+            {post.content}
           </p>
         </div>
       </div>
