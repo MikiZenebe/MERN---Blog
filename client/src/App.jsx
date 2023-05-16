@@ -8,11 +8,13 @@ import {
   Signup,
   UpdateBlog,
 } from "./pages";
+import { Toaster } from "react-hot-toast";
 
 export default function App() {
   return (
     <div>
       <main>
+        <Toaster />
         <header className="sticky top-0 z-50">
           <Navbar />
         </header>

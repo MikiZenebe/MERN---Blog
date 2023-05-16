@@ -19,6 +19,7 @@ export default function Home() {
   return (
     <div>
       <Banner />
+
       <Post posts={posts} />
     </div>
   );
