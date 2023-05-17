@@ -30,7 +30,7 @@ export default function Post({ posts }) {
                 <p className="text-[13px]">{item.desc}</p>
               </div>
 
-              <div className="mt-3 flex items-center gap-3">
+              <div className="mt-3 flex items-center gap-4">
                 <img
                   className="w-8 h-8 object-cover rounded-full"
                   src={banner}
@@ -40,7 +40,7 @@ export default function Post({ posts }) {
                   {item.username}
                 </p>
 
-                <p className="text-[11px] text-gray-600 ml-8">
+                <p className="text-[11px] text-gray-600 ">
                   {new Date(item.createdAt).toDateString()}
                 </p>
               </div>
