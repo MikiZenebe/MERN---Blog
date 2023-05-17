@@ -101,7 +101,7 @@ export default function CreateBlog() {
 
           <div>
             <textarea
-              className="textarea textarea-bordered  w-[300px] sm:w-[450px] md:w-[450px] lg:w-[450px] transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="textarea textarea-bordered  w-[300px] sm:w-[450px] md:w-[450px] lg:w-[450px] transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent "
               label="Write your story..."
               type="text"
               color="gray"
