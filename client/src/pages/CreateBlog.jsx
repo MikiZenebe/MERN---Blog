@@ -76,13 +76,13 @@ export default function CreateBlog() {
             />
             <label
               htmlFor="fileInput"
-              className="btn btn-circle hover:bg-black hover:text-white transition-all duration-[300ms] ease-out"
+              className="btn btn-circle hover:bg-black hover:text-white transition-all duration-[300ms] ease-out "
             >
               <AiFillCamera className="h-6 w-6 hover:text-white" />
             </label>
 
             <input
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
               placeholder="Category"
               type="text"
               label="Title"
@@ -90,7 +90,7 @@ export default function CreateBlog() {
               onChange={(e) => setCategory(e.target.value)}
             />
             <input
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
               placeholder="Title"
               type="text"
               label="Title"
@@ -101,7 +101,7 @@ export default function CreateBlog() {
 
           <div>
             <textarea
-              className="textarea textarea-bordered  w-[300px] sm:w-[450px] md:w-[450px] lg:w-[450px]"
+              className="textarea textarea-bordered  w-[300px] sm:w-[450px] md:w-[450px] lg:w-[450px] transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
               label="Write your story..."
               type="text"
               color="gray"
@@ -112,7 +112,7 @@ export default function CreateBlog() {
           <div className="w-full">
             <button
               type="submit"
-              className="w-[200px] btn hover:bg-black hover:text-white flex justify-center items-center mx-auto"
+              className="w-[200px] btn hover:bg-black hover:text-white flex justify-center items-center mx-auto transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
             >
               Publish
             </button>

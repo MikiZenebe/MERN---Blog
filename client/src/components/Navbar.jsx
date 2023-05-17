@@ -9,6 +9,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
+    window.location.replace("/");
   };
 
   return (
@@ -46,7 +47,7 @@ export default function Navbar() {
                     <span>Settings</span>
                   </button>
                   <button
-                    className="btn-square btn btn-sm bg-black text-white w-[100px]"
+                    className="btn-square btn btn-sm bg-black text-white w-[100px] hover:text-black"
                     onClick={handleLogout}
                   >
                     <span> Logout</span>
