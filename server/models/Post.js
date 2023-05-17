@@ -8,11 +8,6 @@ const PostSchema = new mongoose.Schema(
       unique: true,
     },
 
-    desc: {
-      type: String,
-      required: true,
-    },
-
     content: {
       type: String,
       required: true,

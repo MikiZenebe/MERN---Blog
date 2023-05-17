@@ -4,6 +4,8 @@ import banner from "../assets/banner.jpg";
 import Categories from "./Categories";
 
 export default function Post({ posts }) {
+  const PF = "http://localhost:4000/images/";
+
   return (
     <div className="py-14 container mx-auto px-6 lg:px-20">
       <Categories />
@@ -14,9 +16,13 @@ export default function Post({ posts }) {
               key={key}
               className="card max-w-[250px] mt-2 transform transition duration-300  gap-1 bg-white p-4"
             >
-              <div>
+              <div className="max-w-[300px]">
                 <Link to={`/post/${item._id}`}>
-                  <img className="" src={banner} alt="" />
+                  <img
+                    className="w-[220px] h-[220px] mx-auto object-cover"
+                    src={PF + item.photo}
+                    alt=""
+                  />
                   <div className="flex flex-col my-1">
                     <h1 className="font-bold">{item.title}</h1>
                   </div>

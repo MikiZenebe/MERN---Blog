@@ -8,6 +8,8 @@ export default function DetailPage() {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
 
+  const PF = "http://localhost:4000/images/";
+
   useEffect(() => {
     const getSingle = async () => {
       const res = await axios.get("http://localhost:4000/posts/" + path);
@@ -41,16 +43,23 @@ export default function DetailPage() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center max-w-[900px] xl:max-w-[1200px]">
-          <img className="w-[800px] rounded-md" src={Img} alt="" />
+        <div className="max-w-[400px]">
+          <div className="flex flex-col justify-center mx-auto items-center max-w-[900px] xl:max-w-[1200px]">
+            <img
+              className="w-[500px] sm:w-[800px] rounded-md"
+              src={PF + post.photo}
+              alt=""
+            />
 
-          <div className="py-3 flex gap-4 mt-2">
-            <p>Edit</p>
-            <p>Delete</p>
+            <div className="py-3 flex gap-4 mt-2">
+              <p>Edit</p>
+              <p>Delete</p>
+            </div>
           </div>
-          <p className=" my-6 max-w-[600px] sm:max-w-[800px] xl:max-w-[1000px] ">
-            {post.content}
-          </p>
+
+          <div className="max-w-[500px] ">
+            <p className="w-[300px]">{post.content}</p>
+          </div>
         </div>
       </div>
     </div>

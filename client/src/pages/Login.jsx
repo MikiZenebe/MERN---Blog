@@ -6,7 +6,7 @@ import { Context } from "../context/Context";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { dispatch, isFetching } = useContext(Context);
+  const { user, dispatch, isFetching } = useContext(Context);
 
   const loginHandler = async (e) => {
     e.preventDefault();

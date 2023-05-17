@@ -18,19 +18,17 @@ export default function Categories() {
       <h1 className="text-2xl font-bold text-center ">
         Most interesting topic
       </h1>
-      <div className="flex gap-5 sm:gap-10 my-6 w-full justify-center text-[12px]">
-        <span>
-          {cat.map((cat, i) => (
-            <span key={i}>
-              {" "}
-              <Link to={`/?cat=${cat.name}`}>
-                <p className="border-gray-400 border-[1px] px-3 py-1 rounded-xl font-medium items-center hover:bg-black hover:transition hover:duration-300 hover:text-white cursor-pointer">
-                  {cat.name}
-                </p>
-              </Link>
-            </span>
-          ))}
-        </span>
+      <div className="flex gap-2 flex-wrap sm:gap-10 my-6 w-full justify-center text-[12px]">
+        {cat.map((cat, i) => (
+          <span key={i}>
+            {" "}
+            <Link to={`/?cat=${cat.name}`}>
+              <p className="border-gray-400 border-[1px] px-3 py-1 rounded-xl font-medium items-center hover:bg-black hover:transition hover:duration-300 hover:text-white cursor-pointer">
+                {cat.name}
+              </p>
+            </Link>
+          </span>
+        ))}
       </div>
     </div>
   );
