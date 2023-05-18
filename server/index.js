@@ -43,6 +43,3 @@ app.use("/user", userRouter);
 
 const postRouter = require("./routes/post");
 app.use("/posts", postRouter);
-
-const catRouter = require("./routes/categories");
-app.use("/categories", catRouter);

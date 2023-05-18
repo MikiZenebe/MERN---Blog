@@ -82,15 +82,6 @@ export default function Signup() {
                 className="transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-300  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                 placeholder="password must be morethan 6 char"
               />
-
-              <input
-                type="password"
-                required
-                autoFocus
-                id="ConfirmPassword"
-                className="transition-all duration-[300ms] ease-out rounded-lg  appearance-none border border-gray-300  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                placeholder="Confirm password"
-              />
             </div>
 
             <div className="py-4">

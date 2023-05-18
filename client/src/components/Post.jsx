@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import banner from "../assets/banner.jpg";
 import { Context } from "../context/Context";
-import Categories from "./Categories";
 
 export default function Post({ posts }) {
   const PF = "http://localhost:4000/images/";
@@ -45,7 +44,7 @@ export default function Post({ posts }) {
               <div className="mt-3 flex items-center gap-4">
                 <img
                   className="w-8 h-8 object-cover rounded-full"
-                  src={PF + profilePic}
+                  src={PF + item.profilePic}
                 />
 
                 <p className="text-[13px] font-semibold text-gray-500">

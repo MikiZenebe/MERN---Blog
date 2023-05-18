@@ -145,6 +145,7 @@ export default function Setting() {
                     <div className="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-black">
                       <input
                         type="text"
+                        required
                         className="w-full flex-shrink appearance-none input input-bordered  max-w-xs transition-all duration-[300ms] ease-out rounded-lg  border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                         placeholder={user.username}
                         onChange={(e) => setUsername(e.target.value)}
@@ -164,6 +165,7 @@ export default function Setting() {
                     <div className="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-black">
                       <input
                         type="email"
+                        required
                         className="w-full flex-shrink appearance-none input input-bordered  max-w-xs transition-all duration-[300ms] ease-out rounded-lg  border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                         placeholder={user.email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -183,6 +185,7 @@ export default function Setting() {
                     <div className="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-black">
                       <input
                         type="password"
+                        required
                         className="w-full flex-shrink appearance-none input input-bordered  max-w-xs transition-all duration-[300ms] ease-out rounded-lg  border border-gray-400  py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm  focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                         placeholder="*********"
                         onChange={(e) => setPassword(e.target.value)}

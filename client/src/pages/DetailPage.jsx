@@ -80,7 +80,7 @@ export default function DetailPage() {
         <div className="my-8 flex gap-4 justify-center">
           <div className="avatar">
             <div className="w-12 rounded-full ring ring-gray-500 ring-offset-gray-200 ring-offset-2">
-              <img src={Img} />
+              <img src={PF + user.profilePic} />
             </div>
           </div>
 
