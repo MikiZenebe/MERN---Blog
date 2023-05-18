@@ -6,6 +6,7 @@ import banner from "../assets/banner.jpg";
 
 export default function Navbar() {
   const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:4000/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -23,9 +24,7 @@ export default function Navbar() {
 
         {user ? (
           <div className="flex items-center gap-4">
-            {" "}
             <Link to="/write">
-              {" "}
               <h1 className="transition-all duration-[350ms] ease-out hover:bg-black hover:text-white border border-black px-2 py-1 rounded-lg flex items-center gap-2">
                 <AiFillEdit />
                 Write
@@ -34,7 +33,7 @@ export default function Navbar() {
             <div className="dropdown dropdown-end ">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={banner} />
+                  <img src={PF + user.profilePic} />
                 </div>
               </label>
               <ul
@@ -43,9 +42,12 @@ export default function Navbar() {
               >
                 <div className="flex flex-col gap-2 mx-auto">
                   {" "}
-                  <button className=" btn btn-sm  w-[100px]">
-                    <span>Settings</span>
-                  </button>
+                  <Link to="/settings">
+                    {" "}
+                    <button className=" btn btn-sm  w-[100px]">
+                      <span>Settings</span>
+                    </button>
+                  </Link>
                   <button
                     className="btn-square btn btn-sm bg-black text-white w-[100px] hover:text-black"
                     onClick={handleLogout}

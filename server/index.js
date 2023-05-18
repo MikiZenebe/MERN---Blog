@@ -45,5 +45,4 @@ const postRouter = require("./routes/post");
 app.use("/posts", postRouter);
 
 const catRouter = require("./routes/categories");
-const path = require("path");
 app.use("/categories", catRouter);
